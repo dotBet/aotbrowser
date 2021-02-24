@@ -4,13 +4,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
-    <Model>ARBTestExt</Model>
+    <Model>AOTBrowser</Model>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <OutputPath>bin</OutputPath>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6ab4b3c7-da0e-4e26-94df-40c165b1366a}</ProjectGuid>
-    <Name>ARB_TestExtensions</Name>
-    <RootNamespace>ARB_TestExtensions</RootNamespace>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <ProjectGuid>{b46ba67d-f758-4471-a70b-d6b2e2a4689d}</ProjectGuid>
+    <Name>AOTBrowser</Name>
+    <RootNamespace>AOTBrowser</RootNamespace>
     <StartupType>Class</StartupType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
@@ -29,32 +30,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Base Enum Extensions\" />
-    <Folder Include="Simple Query Extensions\" />
-    <Folder Include="Table Extensions\" />
-    <Folder Include="View Extensions\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AxEnumExtension\ABC.ARBTestExt">
-      <SubType>Content</SubType>
-      <Name>ABC.ARBTestExt</Name>
-      <Link>Base Enum Extensions\ABC.ARBTestExt</Link>
-    </Content>
-    <Content Include="AxQuerySimpleExtension\AssetTableDepreciation.ARBTestExt">
-      <SubType>Content</SubType>
-      <Name>AssetTableDepreciation.ARBTestExt</Name>
-      <Link>Simple Query Extensions\AssetTableDepreciation.ARBTestExt</Link>
-    </Content>
-    <Content Include="AxTableExtension\AbbreviationsStaging.ARBTestExt">
-      <SubType>Content</SubType>
-      <Name>AbbreviationsStaging.ARBTestExt</Name>
-      <Link>Table Extensions\AbbreviationsStaging.ARBTestExt</Link>
-    </Content>
-    <Content Include="AxViewExtension\AccountantElectronicAddressView_BR.ARBTestExt">
-      <SubType>Content</SubType>
-      <Name>AccountantElectronicAddressView_BR.ARBTestExt</Name>
-      <Link>View Extensions\AccountantElectronicAddressView_BR.ARBTestExt</Link>
-    </Content>
+    <ProjectReference Include="..\..\AOTBrowser\Arbela.Dynamics.AX.Xpp.Support\Arbela.Dynamics.AX.Xpp.Support.csproj">
+      <Name>Arbela.Dynamics.AX.Xpp.Support</Name>
+      <Project>{2f618da7-59bc-4abe-8f24-72d2d59f9ad4}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AOTBrowser\PygmentSharp.Core\PygmentSharp.Core.csproj">
+      <Name>PygmentSharp.Core</Name>
+      <Project>{9eb63a83-0f9d-4c49-bc2a-95e37eb1cb15}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
   <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />

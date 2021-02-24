@@ -43,6 +43,7 @@
     <Folder Include="Security Privileges\" />
     <Folder Include="Security Roles\" />
     <Folder Include="Tables\" />
+    <Folder Include="Tiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AOTBrowser.en-US.label.txt">
@@ -110,16 +111,6 @@
       <Name>ARBAOTObjectTypeAttribute</Name>
       <Link>Classes\ARBAOTObjectTypeAttribute</Link>
     </Content>
-    <Content Include="AxClass\ARBDMFEntity_EventHandler">
-      <SubType>Content</SubType>
-      <Name>ARBDMFEntity_EventHandler</Name>
-      <Link>Classes\ARBDMFEntity_EventHandler</Link>
-    </Content>
-    <Content Include="AxClass\ARBFormControlPersonalization_EventHandler">
-      <SubType>Content</SubType>
-      <Name>ARBFormControlPersonalization_EventHandler</Name>
-      <Link>Classes\ARBFormControlPersonalization_EventHandler</Link>
-    </Content>
     <Content Include="AxClass\ARBObjectExtension">
       <SubType>Content</SubType>
       <Name>ARBObjectExtension</Name>
@@ -175,6 +166,11 @@
       <Name>CommonMenu.AOTBrowser</Name>
       <Link>Menu Extensions\CommonMenu.AOTBrowser</Link>
     </Content>
+    <Content Include="AxMenuExtension\navpanemenu.AOTBrowser">
+      <SubType>Content</SubType>
+      <Name>navpanemenu.AOTBrowser</Name>
+      <Link>Menu Extensions\navpanemenu.AOTBrowser</Link>
+    </Content>
     <Content Include="AxMenuItemAction\ARBAOTObjectPopulate">
       <SubType>Content</SubType>
       <Name>ARBAOTObjectPopulate</Name>
@@ -215,11 +211,21 @@
       <Name>ARBAOTObjects</Name>
       <Link>Tables\ARBAOTObjects</Link>
     </Content>
+    <Content Include="AxTile\ARBAOTBrowserTile">
+      <SubType>Content</SubType>
+      <Name>ARBAOTBrowserTile</Name>
+      <Link>Tiles\ARBAOTBrowserTile</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Arbela.Dynamics.AX.Xpp.Support\Arbela.Dynamics.AX.Xpp.Support.csproj">
       <Name>Arbela.Dynamics.AX.Xpp.Support</Name>
       <Project>{2f618da7-59bc-4abe-8f24-72d2d59f9ad4}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\PygmentSharp.Core\PygmentSharp.Core.csproj">
+      <Name>PygmentSharp.Core</Name>
+      <Project>{9eb63a83-0f9d-4c49-bc2a-95e37eb1cb15}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
